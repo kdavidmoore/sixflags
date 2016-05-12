@@ -1,0 +1,94 @@
+#header{
+	background: #a91a16 url(../images/sf-bg-park-header.jpg) no-repeat center top;
+	float: left;
+	width: 100%;
+	box-shadow: 0px -4px 3px rgba(50,50,50,0.75);
+	height: 110px;
+	#header-inner{
+		padding-top: 10px;
+		max-width: 900px;
+		margin: auto;
+		#header-left{
+			float: left;
+		}
+
+		#header-right{
+			float: right;
+			.link-item{
+				float: left;
+				margin: 0 0 0 0.5em;
+				list-style: none;
+				a{
+					text-decoration: none;
+					color: #f3f3f3;		
+					font-size: 12px;
+					line-height: 18px;		
+					&:hover{
+						color: #ffcb00;
+					}
+				}
+				&.orange{
+					a{
+						color: #ffcb00;	
+						&:hover{
+							color: #f3f3f3;
+						}
+						
+					}
+				}				
+			}
+			#park-title{
+				font-size: 30px;
+				color: white;
+				font-weight: bold;
+				text-align: right;
+			}
+			#park-city{
+				text-align: right;
+				color: white;
+			}
+		}
+	}
+}
+
+#nav-bar{
+	width: 100%;
+    background: linear-gradient(to bottom,#fafbfb,#e1e1e1);	
+    float: left;
+    #nav-inner{
+    	overflow: hidden;
+    	max-width: 991px;
+    	margin: auto;
+	    .menu-item{
+	    	list-style: none;
+	    	padding: 10px 20px;
+	    	float: left;
+	    	border-left: solid 1px #ccc;
+	    	&:hover{
+	    		background-color: #282828;
+	    	}
+	    	a{
+		    	font-size: 14px;
+		    	text-decoration: none;
+		    	color: #666666;
+		    	&:hover{
+					color: #ffcb00;
+		    	}
+		    }    
+		    &.green{
+	    		background: #82e847;
+	    		color: white;
+		    	&:hover{
+		    		background-color: #282828;
+		    	}
+	    		
+	    		a{
+			    	&:hover{
+						color: #ffcb00;
+			    	}
+	    		}
+		    }
+    	}
+	}
+}
+
