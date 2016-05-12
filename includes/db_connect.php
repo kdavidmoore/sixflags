@@ -12,17 +12,3 @@
 	if (!$db_selected){
 		die("Cannot use database 'sixflags': " . mysql_error());
 	}
-
-	// $query = "SELECT * FROM promos";
-	// $result = mysql_query($query);
-
-	// $students = [];
-	// // for each row in the associative array returned by MySQL...
-	// while($row = mysql_fetch_assoc($result)){
-	// 	// add that row to the students array so we can work with it in PHP
-	// 	$students[] = $row;
-	// 	//print_r ($row);
-	// }
-
-	// print_r $students[]['title'];
-	// exit;

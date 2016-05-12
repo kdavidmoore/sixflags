@@ -2,10 +2,10 @@
 	include 'includes/db_connect.php';
 
 	$promo_array[] = array(
-		'title' => 'Online Store',
-		'image' => 'images/comboseason.jpg',
-		'text_header' => 'Discount Season Passes',
-		'text_body' => 'Buy Season Passes now and save! Or get Combo Passes for unlimited visits to Six Flags Over Georgia.',
+		'promo_title' => 'Online Store',
+		'header_image' => 'images/comboseason.jpg',
+		'header_text' => 'Discount Season Passes',
+		'body_text' => 'Buy Season Passes now and save! Or get Combo Passes for unlimited visits to Six Flags Over Georgia.',
 		'lower_image' => 'images/cabanas.jpg',
 		'lower_header' => 'Cabanas',
 		'lower_text' => 'Cool off and relax in your own private hideaway.',
@@ -15,10 +15,10 @@
 	);
 
 	$promo_array[] = array(
-		'title' => 'Rides',
-		'image' => 'images/wahoo.jpg',
-		'text_header' => 'Wahoo Racer',
-		'text_body' => 'Coming May 21, race head-first, stomach-down on a six-lane course to the finish line.',
+		'promo_title' => 'Rides',
+		'header_image' => 'images/wahoo.jpg',
+		'header_text' => 'Wahoo Racer',
+		'body_text' => 'Coming May 21, race head-first, stomach-down on a six-lane course to the finish line.',
 		'lower_image' => 'images/divebomb.jpg',
 		'lower_header' => 'Dive Bomber',
 		'lower_text' => 'Our tallest water slide -- Dive Bomber!',
@@ -28,10 +28,10 @@
 	);
 
 	$promo_array[] = array(
-		'title' => 'Groups',
-		'image' => 'images/assocs.jpg',
-		'text_header' => 'Bring the Whole Group',
-		'text_body' => 'Great rates for groups. Once inside, relax with a catered meal in your own picnic area.',
+		'promo_title' => 'Groups',
+		'header_image' => 'images/assocs.jpg',
+		'header_text' => 'Bring the Whole Group',
+		'body_text' => 'Great rates for groups. Once inside, relax with a catered meal in your own picnic area.',
 		'lower_image' => 'images/lazyriver.jpg',
 		'lower_header' => 'Youth Group Events',
 		'lower_text' => 'Camps, clubs, scouts and cubs--they all love a day at the park.',
@@ -39,6 +39,16 @@
 		'lower_header2' => 'Birthday Parties',
 		'lower_text2' => 'Six Flags White Water has birthday packages for parties of 8 or more.'
 	);
+
+	$query = "SELECT * FROM promos";
+	$result = mysql_query($query);
+
+	// for each row in the associative array returned by MySQL...
+	while($row = mysql_fetch_assoc($result)){
+		// add that row to the promos array so we can work with it in PHP
+		$promo_array[] = $row;
+		//print_r ($row);
+	}
 
 ?>
 
@@ -101,43 +111,21 @@
 
 		<div id="promotions">
 
-			<?php
-				
-				// foreach($promo_array as $promo){
-				// 	print '<div class="promo">';
-				// 	print '<div class="promo-title">';
-				// 	print $promo['title'];
-				// 	print '</div>';
-				// 	print '<div class="promo-image">';
-				// 	print '<img src="' . $promo['image'] . '">';
-				// 	print '</div>';
-				// 	print '<div class="promo-text-wrapper">';
-				// 	print '<div class="promo-text-title">' . $promo['text-header'];
-				// 	print '</div>';
-				// 	print '<div class="promo-text">' . $promo['text-body'];
-				// 	print '</div>';
-				// 	print '</div>';
-					
-				// 	print '</div>';
-				// }
-
-			?>
-
 			<?php foreach($promo_array as $promo): ?>
 
 			<div class="promo">
 				<div class="promo-title">
-			 		<?php print $promo['title']; ?>
+			 		<?php print $promo['promo_title']; ?>
 		 		</div>
 			 	<div class="promo-image">
-			 		<img src="<?php print $promo['image']; ?>">
+			 		<img src="<?php print $promo['header_image']; ?>">
 			 	</div>
 				<div class="promo-text-wrapper">
 			 		<div class="promo-text-title">
-						<?php print $promo['text_header']; ?>
+						<?php print $promo['header_text']; ?>
 			 		</div>
 			 		<div class="promo-text">
-			 			<?php print $promo['text_body']; ?>				
+			 			<?php print $promo['body_text']; ?>				
 			 		</div>
 			 	</div>
 			 	<div class="promo-small">
