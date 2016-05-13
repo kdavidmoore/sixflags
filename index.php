@@ -47,7 +47,6 @@
 	while($row = mysql_fetch_assoc($result)){
 		// add that row to the promos array so we can work with it in PHP
 		$promo_array[] = $row;
-		//print_r ($row);
 	}
 
 ?>

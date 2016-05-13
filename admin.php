@@ -15,6 +15,17 @@
 
 <div class="container">
 	<div class="row">
+		<div class="col-sm-12 text-center">
+		<?php 
+			$updated = $_GET['updated'];
+			if ($updated == "true"){
+				$message = 'Your promo has been added to the database.';
+				print '<h4>' . $message . '</h4>';
+			}
+		?>
+		</div>
+	</div>
+	<div class="row">
 		<div class="admin-wrapper col-sm-6 col-sm-offset-3">
 			<form action="admin_process.php" method="POST">
 			  <div class="form-group">

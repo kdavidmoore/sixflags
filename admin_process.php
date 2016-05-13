@@ -2,25 +2,22 @@
 	
 	include 'includes/db_connect.php';
 
-	$promo_title = "'".$_POST[promo_title]."'";
-	$header_image = "'".$_POST[header_image]."'";
-	$header_text = "'".$_POST[header_text]."'";
-	$body_text = "'".$_POST[body_text]."'";
-	$lower_image = "'".$_POST[lower_image]."'";
-	$lower_header = "'".$_POST[lower_header]."'";
-	$lower_text = "'".$_POST[lower_text]."'";
-	$lower_image2 = "'".$_POST[lower_image]."'";
-	$lower_header2 = "'".$_POST[lower_header2]."'";
-	$lower_text2 = "'".$_POST[lower_text2]."'";
+	// create a couple of empty strings to hold the data columns and the data
+	$db_cols = '';
+	$fields = '';
+	// take the value of each input field in the form and add a comma 
+	foreach($_POST as $key=>$value){
+		$db_cols .= $key.',';
+		$fields .= "'".$value."',";
+	}
+	// trim the last comma from the end of the data strings
+	$db_cols_trim = rtrim($db_cols, ",");
+	$fields_trim = rtrim($fields, ",");
 
-	$query = 'INSERT INTO promos
-		(promo_title, header_image, header_text, body_text, lower_image, lower_header,
-		lower_text, lower_image2, lower_header2, lower_text2)
-		VALUES
-		('.$promo_title.', '.$header_image.', '.$header_text.', '.$body_text.', '.$lower_image.', '.$lower_header.', '.$lower_text.', '.$lower_image2.', '.$lower_header2.', '.$lower_text2.')';
+	// built the mysql query with trimmed data
+	$query = 'INSERT INTO promos ('.$db_cols_trim.') VALUES ('.$fields_trim.')';
 
+	// send the query to mysql
 	$result = mysql_query($query);
-
-	print mysql_error();
-	print "<br/>";
-	print 'Finished';
+	// let the admin page know that the form was successfully updated
+	header('Location: admin.php?updated=true');
