@@ -1,12 +1,9 @@
 # Six Flags White Water Clone
 
-## Clone of Six Flags White Water site using PHP and MySQL
+## Clone of Six Flags White Water site with a Content Management System (CMS) added using PHP and MySQL
 
-##Features
-* Connects to a MySQL database
-* Adds images and text related to the latest promotions
-* Prints promotional info to index.php
-
-##TODO
-* Add admin page where user can add new promotions
-* New promotions will update on index.php
+## Features
+* Connects to a MySQL database using built-in PHP functions
+* Pulls promotions from the database in the form of an associative array
+* Adds promotional info to the home page
+* Admin page allows ability to add, update, or delete promotions by making queries to the MySQL database
