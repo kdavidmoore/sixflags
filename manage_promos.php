@@ -1,9 +1,9 @@
 <?php
 	include 'includes/db_connect.php';
-	include 'includes/seed.php';
 	$query = 'SELECT * FROM promos';
 	$result = mysql_query($query);
 
+	$promo_array = [];
 	// for each row in the associative array returned by MySQL...
 	while($row = mysql_fetch_assoc($result)){
 		// add that row to the promos array so we can work with it in PHP
@@ -27,13 +27,6 @@
 	<div class="row">
 		<div class="col-sm-12 text-center">
 			<h1>Current Promotions</h1>
-			<?php 
-				$updated = $_GET['updated'];
-				if ($updated == "true"){
-					$message = 'Your promo has been added to the database.';
-					print '<h4>' . $message . '</h4>';
-				}
-			?>
 		</div>
 	</div>
 	<div class="row">
@@ -43,8 +36,8 @@
 					<div class="manage-title"><h4><?php print $promo['promo_title']; ?></h4></div>
 					<div class="manage-image"><img src="<?php print $promo['header_image']; ?>"></div>
 					<div class="manage-text"><p><?php print $promo['header_text']; ?></p></div>
-					<button name="edit" class="btn btn-default">Edit</button>
-					<button name="delete" class="btn btn-default">Delete</button>
+					<a class="btn btn-default" href="edit_promo?id=<?php print $promo['id']; ?>">Edit</a> 
+					<a class="btn btn-default" href="delete_promo?id=<?php print $promo['id']; ?>">Delete</a>
 				</div>
 			<?php endforeach; ?>
 		</div>

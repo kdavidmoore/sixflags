@@ -27,6 +27,7 @@
 		</div>
 	</div>
 	<div class="row">
+
 		<div class="admin-wrapper col-sm-6 col-sm-offset-3">
 			<form action="admin_process.php" method="POST">
 			  <div class="form-group">
