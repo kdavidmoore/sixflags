@@ -1,0 +1,9 @@
+/* line 1, ../compass/sass/manage.scss */
+img {
+  width: 100%;
+}
+
+/* line 5, ../compass/sass/manage.scss */
+.manage-image {
+  max-width: 200px;
+}

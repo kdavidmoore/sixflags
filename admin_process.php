@@ -14,10 +14,10 @@
 	$db_cols_trim = rtrim($db_cols, ",");
 	$fields_trim = rtrim($fields, ",");
 
-	// built the mysql query with trimmed data
+	// build the mysql query with trimmed data
 	$query = 'INSERT INTO promos ('.$db_cols_trim.') VALUES ('.$fields_trim.')';
 
 	// send the query to mysql
-	$result = mysql_query($query);
+	mysql_query($query);
 	// let the admin page know that the form was successfully updated
-	header('Location: admin.php?updated=true');
+	header('Location: add_promo.php?updated=true');
