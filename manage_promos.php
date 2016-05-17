@@ -36,8 +36,8 @@
 					<div class="manage-title"><h4><?php print $promo['promo_title']; ?></h4></div>
 					<div class="manage-image"><img src="<?php print $promo['header_image']; ?>"></div>
 					<div class="manage-text"><p><?php print $promo['header_text']; ?></p></div>
-					<a class="btn btn-default" href="edit_promo?id=<?php print $promo['id']; ?>">Edit</a> 
-					<a class="btn btn-default" href="delete_promo?id=<?php print $promo['id']; ?>">Delete</a>
+					<a class="btn btn-default" href="edit_promo.php?id=<?php print $promo['id']; ?>">Edit</a> 
+					<a class="btn btn-default" href="admin_process.php?task=delete&id=<?php print $promo['id']; ?>">Delete</a>
 				</div>
 			<?php endforeach; ?>
 		</div>
