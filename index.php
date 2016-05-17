@@ -10,7 +10,6 @@
 		// add that row to the promos array so we can work with it in PHP
 		$promo_array[] = $row;
 	}
-
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +41,7 @@
 					<li class="link-item"><a href="#">Pass Holder Login</a></li>
 					<li class="link-item orange"><a href="#"><img src="images/icon-cart.png"> My Cart [0]</a></li>
 					<li class="link-item orange"><a href="#">Enter Promo Code</a></li>
+					<li class="link-item orange"><a href="admin.php">Admin Page</a></li>
 				</div>
 				<div id="park-title">Six Flags White Water</div>
 				<div id="park-city">Atlanta</div>
